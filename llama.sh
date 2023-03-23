@@ -37,3 +37,7 @@ do
     echo "Checking checksums"
     (cd ${TARGET_FOLDER}"/${i}" && md5sum -c checklist.chk)
 done
+    wget ${PRESIGNED_URL/'*'/"${i}/checklist.chk"} -O ${TARGET_FOLDER}"/${i}/checklist.chk"
+    echo "Checking checksums"
+    (cd ${TARGET_FOLDER}"/${i}" && md5sum -c checklist.chk)
+done
